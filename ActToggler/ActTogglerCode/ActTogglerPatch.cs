@@ -14,7 +14,9 @@ public class ActTogglerPatch
         var list = __result.ToList();
         for (int i = 0; i < list.Count; i++)
         {
-            list[i] = ActTogglerConfig.GetWeightedAct(i + 1, rng);
+            var slot = i + 1;
+            if (slot > 3) break;
+            list[i] = ActTogglerConfig.GetWeightedAct(slot, rng);
         }
         __result = list;
     }
